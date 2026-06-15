@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 
 from scripts.checkout_bug_versions import add_checkout_bug_parser
+from scripts.major_experiment import add_major_build_parser, add_major_run_parser
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -14,6 +15,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
     add_checkout_bug_parser(subparsers)
+    add_major_build_parser(subparsers)
+    add_major_run_parser(subparsers)
     return parser
 
 
